@@ -1,7 +1,7 @@
 #ifndef SRC_GRAPH_H_
 #define SRC_GRAPH_H_
 #include <math.h>
-#define _USE_MATH_DEFINES  // для M_PI, важно поставить именно в системных include, иначе не определится
+#define _USE_MATH_DEFINES
 #include "stack.h"
 #include "conditions.h"
 #include "input_parse.h"
