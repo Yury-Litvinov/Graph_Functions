@@ -6,7 +6,6 @@ int main() {
     struct expr *expr_in = read_expr();
     if (expr_in != NULL) {
         convert_to_pn(expr_in->f_in, expr_in->pn);
-        // printf("%s\n%s\n%s\n", expr_in->in_str, expr_in->f_in, expr_in->pn);
         if (is_correct_expression(expr_in->pn)) {
             screen = (char**)malloc(SCR_H * sizeof(char*) + SCR_H * (SCR_W + 1) * sizeof(char));
             for (int i = 0; i < SCR_H; i++)
@@ -38,8 +37,6 @@ void fill_table_screen(char** screen, char* func) {
     for (int i = 0; i < SCR_W; i++) {
         double y = calculate(func, x * i);
         long screen_y = lround((y - MIN_Y) / (MAX_Y - MIN_Y) * (SCR_H - 1));
-        // printf("%lf ", y);
-        // printf("x=%.2lf y=%.2lf scr_y=%ld\n", x * i, y, screen_y % SCR_H);
         if (screen_y >= 0 && screen_y < SCR_H)
             screen[screen_y][i] = '*';
     }
